@@ -1,18 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { env } from 'src/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddressBookComponent } from './components/containers/address-book/address-book.component';
+import { AddressCardComponent } from './components/ui/address-card/address-card.component';
+import { MaterialUiModule } from './utils/material-ui/material-ui.module';
+
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, AddressBookComponent, AddressCardComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialUiModule,
+     provideFirebaseApp(() => initializeApp(env.firebaseConfig)),
+     provideFirestore(() => getFirestore())
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

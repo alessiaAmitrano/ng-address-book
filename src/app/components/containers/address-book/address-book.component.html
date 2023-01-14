@@ -1,0 +1,7 @@
+<div class="address-book-flex">
+  <app-address-card
+    *ngFor="let address of addressItems | async"
+    [addressItem]="address"
+  >
+  </app-address-card>
+</div>
