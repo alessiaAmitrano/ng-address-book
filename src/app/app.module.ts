@@ -10,10 +10,12 @@ import { AppComponent } from './app.component';
 import { AddressBookComponent } from './components/containers/address-book/address-book.component';
 import { AddressCardComponent } from './components/ui/address-card/address-card.component';
 import { MaterialUiModule } from './utils/material-ui/material-ui.module';
+import { HeaderComponent } from './components/ui/header/header.component';
+import { IconButtonComponent } from './components/ui/icon-button/icon-button.component';
 
 
 @NgModule({
-  declarations: [AppComponent, AddressBookComponent, AddressCardComponent],
+  declarations: [AppComponent, AddressBookComponent, AddressCardComponent, HeaderComponent, IconButtonComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
