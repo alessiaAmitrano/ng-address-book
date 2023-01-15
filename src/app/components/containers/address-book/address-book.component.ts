@@ -12,6 +12,21 @@ export class AddressBookComponent implements OnInit {
   filteredItems: AddressItem[] = [];
 
   ngOnInit() {
-    this.addressItems?.subscribe(value => this.filteredItems = value);
+    this.addressItems?.subscribe((value) => (this.filteredItems = value));
+  }
+
+  filterAddresses(filteringValue: string) {
+    const filteringResult = this.filteredItems.filter((address) => {
+      if (
+        address.first_name.includes(filteringValue) ||
+        address.last_name.includes(filteringValue) ||
+        address.phone_number?.includes(filteringValue)
+      ) {
+        return address;
+      } else {
+        return;
+      }
+    });
+    console.log('filter', [filteringValue, filteringResult]);
   }
 }

@@ -1,4 +1,6 @@
-<app-filter-toolbar></app-filter-toolbar>
+<app-filter-toolbar
+  (inputChangeEmitter)="filterAddresses($event)"
+></app-filter-toolbar>
 <div class="address-book-flex">
   <app-address-card
     *ngFor="let address of filteredItems"
