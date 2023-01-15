@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'Address Book Demo';
-  addressItems: Observable<DocumentData[]>;
+  addressItems$: Observable<DocumentData[]>;
 
   constructor(private firestore: Firestore) {
     const collectionItem = collection(firestore, '/addressbook');
-    this.addressItems = collectionData(collectionItem);
+    this.addressItems$ = collectionData(collectionItem);
   }
 
   ngOnInit() {}

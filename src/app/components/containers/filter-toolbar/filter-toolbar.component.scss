@@ -1,0 +1,22 @@
+:host{
+    display: block;
+    margin: 2rem 0;
+  }
+
+  .filters-toolbar {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    section:first-child {
+      transform: scale(0.85);
+      margin-left: -1rem;
+      width: 211px;
+    }
+
+    mat-form-field {
+      margin-top: 18px;
+    }
+  }

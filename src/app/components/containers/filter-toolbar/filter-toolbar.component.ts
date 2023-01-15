@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-filter-toolbar',
@@ -7,17 +6,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./filter-toolbar.component.scss'],
 })
 export class FilterToolbarComponent {
-  filterValue= new FormControl('');
+  filterValue = '';
   @Output() inputChangeEmitter = new EventEmitter<string>();
 
   resetFilterValue() {
-    this.filterValue.setValue('');
+    this.filterValue = '';
   }
 
   onInputChange() {
-    if(this.filterValue.value) {
-      this.inputChangeEmitter.emit(this.filterValue.value);
-    }
+    this.inputChangeEmitter.emit(this.filterValue);
   }
-
 }
