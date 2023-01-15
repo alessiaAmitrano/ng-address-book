@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { AddressItem } from 'src/app/core/models';
 
 @Component({
   selector: 'app-address-card',
@@ -8,6 +7,6 @@ import { AddressItem } from 'src/app/core/models';
 })
 export class AddressCardComponent {
 
-@Input() addressItem : AddressItem = {full_name: 'Alessia Amitrano', phone_number: '07710984813'};
+@Input() addressItem : any = {full_name: 'Alessia Amitrano', phone_number: '07710984813'};
 
 }

@@ -4,7 +4,19 @@
     <mat-card-subtitle>{{ addressItem.phone_number }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
-    <button mat-raised-button color="primary">Edit</button>
-    <button mat-raised-button color="accent">Delete</button>
+    <app-icon-button
+      [color]="'primary'"
+      [ariaLabel]="'Edit Address'"
+      [icon]="'home'"
+    >
+      Edit
+    </app-icon-button>
+    <app-icon-button
+      [color]="'accent'"
+      [ariaLabel]="'Delete Address'"
+      [icon]="'home'"
+    >
+      Edit
+    </app-icon-button>
   </mat-card-actions>
 </mat-card>

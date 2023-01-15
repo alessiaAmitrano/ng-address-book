@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { collection, collectionData, DocumentData, Firestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 
@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'ng-address-book';
-  addressItems: Observable<any[]>;
+  title = 'Address Book Demo';
+  addressItems: Observable<DocumentData[]>;
 
   constructor(private firestore: Firestore) {
     const collectionItem = collection(firestore, '/addressbook');
