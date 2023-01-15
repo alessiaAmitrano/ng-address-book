@@ -1,20 +1,22 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>{{ addressItem.full_name }}</mat-card-title>
-    <mat-card-subtitle>{{ addressItem.phone_number }}</mat-card-subtitle>
+    <mat-card-title
+      >{{ addressItem.first_name }} {{ addressItem.last_name }}</mat-card-title
+    >
+    <mat-card-subtitle>Phone: {{ addressItem.phone_number }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
     <app-icon-button
       [color]="'primary'"
       [ariaLabel]="'Edit Address'"
-      [icon]="'home'"
+      [icon]="'edit'"
     >
       Edit
     </app-icon-button>
     <app-icon-button
       [color]="'accent'"
       [ariaLabel]="'Delete Address'"
-      [icon]="'home'"
+      [icon]="'delete'"
     >
       Edit
     </app-icon-button>

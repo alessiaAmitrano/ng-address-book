@@ -1,5 +1,15 @@
-:host {
+mat-card {
   display: block;
-  border: 1px solid white;
+  background-color: #212121;
+  color: #fff;
   width: 300px;
+
+  mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    app-icon-button:first-child {
+      margin-right: 10px;
+    }
+  }
 }
