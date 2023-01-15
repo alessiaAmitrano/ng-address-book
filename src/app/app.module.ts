@@ -12,10 +12,11 @@ import { AddressCardComponent } from './components/ui/address-card/address-card.
 import { MaterialUiModule } from './utils/material-ui/material-ui.module';
 import { HeaderComponent } from './components/ui/header/header.component';
 import { IconButtonComponent } from './components/ui/icon-button/icon-button.component';
+import { FilterToolbarComponent } from './components/ui/filter-toolbar/filter-toolbar.component';
 
 
 @NgModule({
-  declarations: [AppComponent, AddressBookComponent, AddressCardComponent, HeaderComponent, IconButtonComponent],
+  declarations: [AppComponent, AddressBookComponent, AddressCardComponent, HeaderComponent, IconButtonComponent, FilterToolbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
