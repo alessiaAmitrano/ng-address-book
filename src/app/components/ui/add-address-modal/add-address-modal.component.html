@@ -6,15 +6,30 @@
     <div>
       <mat-form-field>
         <mat-label>First Name</mat-label>
-        <input type="text" matInput value="" [formControl]="firstName" />
+        <input
+          (input)="onInput()"
+          type="text"
+          matInput
+          value=""
+          required
+          [formControl]="firstName"
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Last Name</mat-label>
-        <input type="text" matInput value="" [formControl]="lastName" />
+        <input
+          (input)="onInput()"
+          type="text"
+          matInput
+          value=""
+          required
+          [formControl]="lastName"
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Phone number</mat-label>
         <input
+          (input)="onInput()"
           type="telephone"
           matInput
           value=""
@@ -26,7 +41,12 @@
       <button mat-raised-button color="accent" (click)="dialogRef.close()">
         Cancel
       </button>
-      <button mat-raised-button color="primary" (click)="onFormSubmit()">
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="addBtnDisabled"
+        (click)="onFormSubmit()"
+      >
         Add
       </button>
     </div>

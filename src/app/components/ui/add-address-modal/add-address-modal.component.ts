@@ -19,6 +19,7 @@ export class AddAddressModalComponent {
   firstName = new FormControl();
   lastName = new FormControl();
   telephoneNumber = new FormControl();
+  addBtnDisabled = true;
 
   constructor(
     private firestore: Firestore,
@@ -45,6 +46,19 @@ export class AddAddressModalComponent {
         last_name: this.lastName.value,
         phone_number: this.telephoneNumber.value,
       }).then(() => this.dialogRef.close());
+    }
+  }
+
+  onInput() {
+    if (
+      this.firstName.value &&
+      this.firstName.value.length > 0 &&
+      this.lastName.value &&
+      this.lastName.value.length > 0
+    ) {
+      this.addBtnDisabled = false;
+    } else {
+      this.addBtnDisabled = true;
     }
   }
 }
