@@ -11,7 +11,7 @@ import { AddAddressModalComponent } from '../../ui/add-address-modal/add-address
   styleUrls: ['./address-book.component.scss'],
 })
 export class AddressBookComponent implements OnInit {
-  private addressItems: AddressItem[] = [];
+  addressItems: AddressItem[] = [];
   filteredItems: AddressItem[] = [];
   isLoading = true;
 

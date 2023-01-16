@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MaterialUiModule } from 'src/app/utils/material-ui/material-ui.module';
 
 import { LoadingOverlayComponent } from './loading-overlay.component';
 
@@ -8,9 +9,9 @@ describe('LoadingOverlayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoadingOverlayComponent ]
-    })
-    .compileComponents();
+      imports: [MaterialUiModule],
+      declarations: [LoadingOverlayComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(LoadingOverlayComponent);
     component = fixture.componentInstance;

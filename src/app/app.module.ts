@@ -14,9 +14,9 @@ import { AddAddressModalComponent } from './components/ui/add-address-modal/add-
 import { AddressCardComponent } from './components/ui/address-card/address-card.component';
 import { HeaderComponent } from './components/ui/header/header.component';
 import { IconButtonComponent } from './components/ui/icon-button/icon-button.component';
+import { LoadingOverlayComponent } from './components/ui/loading-overlay/loading-overlay.component';
 import { FireStoreDbService } from './core/services/firestore-db.service';
 import { MaterialUiModule } from './utils/material-ui/material-ui.module';
-import { LoadingOverlayComponent } from './components/ui/loading-overlay/loading-overlay.component';
 
 @NgModule({
   declarations: [
