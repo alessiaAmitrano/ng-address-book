@@ -6,6 +6,12 @@
 .address-book-flex {
   display: flex;
   flex-flow: row wrap;
+  margin: auto;
+  width: 1300px;
+
+  app-address-card {
+    margin: calc(100px / 8);
+  }
 }
 
 .no-entries {
