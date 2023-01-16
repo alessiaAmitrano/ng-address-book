@@ -9,7 +9,7 @@
   <ng-container *ngIf="filteredItems.length > 0; else noEntries">
     <app-address-card
       *ngFor="let address of filteredItems"
-      (onAddressDelete)="deleteAddressItem($event)"
+      (AddressDeleteEvt)="deleteAddressItem($event)"
       [addressItem]="address"
     >
     </app-address-card>

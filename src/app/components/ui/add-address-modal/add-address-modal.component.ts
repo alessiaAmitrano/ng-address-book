@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import {
-  addDoc,
-  collection,
-  CollectionReference,
-  DocumentData,
-  Firestore,
-} from '@angular/fire/firestore';
 import { FormControl } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FireStoreDbService } from 'src/app/core/services/firestore-db.service';
 
 @Component({
   selector: 'app-add-address-modal',
@@ -15,37 +9,29 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./add-address-modal.component.scss'],
 })
 export class AddAddressModalComponent {
-  collectionItem?: CollectionReference<DocumentData>;
   firstName = new FormControl();
   lastName = new FormControl();
   telephoneNumber = new FormControl();
   addBtnDisabled = true;
 
   constructor(
-    private firestore: Firestore,
+    private firestoreDb: FireStoreDbService,
     public dialogRef: MatDialogRef<AddAddressModalComponent>
-  ) {
-    this.collectionItem = collection(firestore, '/addressbook');
-  }
+  ) {}
 
-  onFormSubmit() {
-    console.log('form', [
-      this.firstName.value,
-      this.lastName.value,
-      this.telephoneNumber.value,
-    ]);
-    if (this.collectionItem) {
-      this.addNewAddressItem();
-    }
-  }
-
+  /**
+   * sends the new Document to Firestore
+   */
   addNewAddressItem() {
-    if (this.collectionItem) {
-      addDoc(this.collectionItem, {
-        first_name: this.firstName.value,
-        last_name: this.lastName.value,
-        phone_number: this.telephoneNumber.value,
-      }).then(() => this.dialogRef.close());
+    const values = {
+      firstName: this.firstName.value,
+      lastName: this.lastName.value,
+      telephoneNumber: this.telephoneNumber.value,
+    };
+    if (values.firstName && values.lastName) {
+      this.firestoreDb
+        .addAddressItem(values)
+        .then(() => this.dialogRef.close());
     }
   }
 

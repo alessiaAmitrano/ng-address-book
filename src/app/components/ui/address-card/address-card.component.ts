@@ -5,11 +5,9 @@ import { AddressItem } from 'src/app/core/models';
 @Component({
   selector: 'app-address-card',
   templateUrl: './address-card.component.html',
-  styleUrls: ['./address-card.component.scss']
+  styleUrls: ['./address-card.component.scss'],
 })
 export class AddressCardComponent {
-@Input() addressItem! : AddressItem;
-@Output() onAddressEdit = new EventEmitter();
-@Output() onAddressDelete = new EventEmitter<DocumentReference>();
-
+  @Input() addressItem!: AddressItem;
+  @Output() AddressDeleteEvt = new EventEmitter<DocumentReference>();
 }

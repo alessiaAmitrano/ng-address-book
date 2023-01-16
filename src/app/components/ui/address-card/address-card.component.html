@@ -7,7 +7,7 @@
   </mat-card-header>
   <mat-card-actions>
     <app-icon-button
-      (click)="onAddressDelete.emit(addressItem.ref)"
+      (click)="AddressDeleteEvt.emit(addressItem.ref)"
       [color]="'primary'"
       [ariaLabel]="'Delete Address'"
       [icon]="'delete'"

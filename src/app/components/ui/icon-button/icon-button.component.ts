@@ -9,5 +9,5 @@ export class IconButtonComponent {
   @Input() color?: string;
   @Input() ariaLabel?: string;
   @Input() textLabel?: string;
-  @Input() icon: string = 'home';
+  @Input() icon = 'home';
 }
