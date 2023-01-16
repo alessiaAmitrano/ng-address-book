@@ -92,6 +92,13 @@ export class AddressBookComponent implements OnInit {
    * opens the modal to add a new AddressItem
    */
   openAddNewDialog() {
-    const dialogRef = this.dialog.open(AddAddressModalComponent);
+    const dialogRef = this.dialog.open(AddAddressModalComponent, {
+      height: '400px',
+      width: '600px',
+    });
+    dialogRef.afterClosed().subscribe(() => {
+      this.addressItems = this.firestoreService.getAddressItems();
+      this.filteredItems = this.addressItems;
+    });
   }
 }

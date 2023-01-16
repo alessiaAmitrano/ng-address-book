@@ -7,19 +7,13 @@
   </mat-card-header>
   <mat-card-actions>
     <app-icon-button
-      [color]="'primary'"
-      [ariaLabel]="'Edit Address'"
-      [icon]="'edit'"
-    >
-      Edit
-    </app-icon-button>
-    <app-icon-button
       (click)="onAddressDelete.emit(addressItem.ref)"
-      [color]="'accent'"
+      [color]="'primary'"
       [ariaLabel]="'Delete Address'"
       [icon]="'delete'"
+      [textLabel]="'Delete'"
     >
-      Edit
+      Delete
     </app-icon-button>
   </mat-card-actions>
 </mat-card>

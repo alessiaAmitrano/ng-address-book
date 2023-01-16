@@ -6,10 +6,15 @@
   (sortByLastEmitter)="sortByLast()"
 ></app-filter-toolbar>
 <div class="address-book-flex">
-  <app-address-card
-    *ngFor="let address of filteredItems"
-    (onAddressDelete)="deleteAddressItem($event)"
-    [addressItem]="address"
-  >
-  </app-address-card>
+  <ng-container *ngIf="filteredItems.length > 0; else noEntries">
+    <app-address-card
+      *ngFor="let address of filteredItems"
+      (onAddressDelete)="deleteAddressItem($event)"
+      [addressItem]="address"
+    >
+    </app-address-card>
+  </ng-container>
+  <ng-template #noEntries>
+    <h2 class="no-entries">Add an address to begin.</h2>
+  </ng-template>
 </div>
