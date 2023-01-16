@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
-    "printWidth": 80,
-    "plugins": ["prettier-plugin-css-order"]
+  "printWidth": 80,
+  "trailingComma": "es5",
+  "plugins": ["prettier-plugin-css-order"]
 }
