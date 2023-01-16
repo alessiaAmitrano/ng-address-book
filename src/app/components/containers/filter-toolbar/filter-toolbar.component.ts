@@ -6,12 +6,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filter-toolbar.component.scss'],
 })
 export class FilterToolbarComponent {
-  filterValue = '';
   @Output() inputChangeEmitter = new EventEmitter<string>();
   @Output() addNewEmitter = new EventEmitter();
+  @Output() downloadCSVEmitter = new EventEmitter();
   @Output() resetFilterEmitter = new EventEmitter();
   @Output() sortByFirstEmitter = new EventEmitter();
   @Output() sortByLastEmitter = new EventEmitter();
+  filterValue = '';
 
   resetFilterValue() {
     this.filterValue = '';

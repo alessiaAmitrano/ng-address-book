@@ -48,6 +48,15 @@
       >
         Sort by Last Name
       </app-icon-button>
+      <app-icon-button
+        (click)="downloadCSVEmitter.emit()"
+        [color]="'basic'"
+        [ariaLabel]="'Download CSV'"
+        [icon]="'download'"
+        [textLabel]="'Download CSV'"
+      >
+        Download CSV
+      </app-icon-button>
     </section>
   </div>
 </mat-toolbar>

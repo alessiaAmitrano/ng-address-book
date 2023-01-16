@@ -1,6 +1,7 @@
 <app-filter-toolbar
   (inputChangeEmitter)="filterAddresses($event)"
   (addNewEmitter)="openAddNewDialog()"
+  (downloadCSVEmitter)="downloadCSVFile()"
   (resetFilterEmitter)="resetFilter()"
   (sortByFirstEmitter)="sortByFirst()"
   (sortByLastEmitter)="sortByLast()"

@@ -107,4 +107,27 @@ export class AddressBookComponent implements OnInit {
       this.isLoading = false;
     });
   }
+
+  /**
+   * generates and triggers the download of a CSV containing the addresses
+   */
+  downloadCSVFile() {
+    const csvArr = [['first_name', 'last_name', 'phone_number']];
+    for (const address of this.addressItems) {
+      csvArr.push([
+        address.first_name,
+        address.last_name,
+        address.phone_number ? address.phone_number : '',
+      ]);
+      let csvContent = '';
+      csvArr.forEach((row) => {
+        csvContent += row.join(',') + '\n';
+      });
+      const csvUrl = 'data:text/csv;charset=utf-8,' + encodeURI(csvContent);
+      const downloadLink = document.createElement('a');
+      downloadLink.setAttribute('href', csvUrl);
+      downloadLink.setAttribute('download', 'File.csv');
+      downloadLink.click();
+    }
+  }
 }
