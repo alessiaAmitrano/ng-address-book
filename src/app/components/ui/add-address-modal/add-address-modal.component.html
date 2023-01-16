@@ -3,25 +3,32 @@
 </mat-toolbar>
 <mat-dialog-content>
   <form class="new-address-form">
-    <mat-form-field>
-      <mat-label>First Name</mat-label>
-      <input type="text" matInput value="" [formControl]="firstName" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Last Name</mat-label>
-      <input type="text" matInput value="" [formControl]="lastName" />
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Phone number</mat-label>
-      <input
-        type="telephone"
-        matInput
-        value=""
-        [formControl]="telephoneNumber"
-      />
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onFormSubmit()">
-      Add
-    </button>
+    <div>
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput value="" [formControl]="firstName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input type="text" matInput value="" [formControl]="lastName" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone number</mat-label>
+        <input
+          type="telephone"
+          matInput
+          value=""
+          [formControl]="telephoneNumber"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button color="accent" (click)="dialogRef.close()">
+        Cancel
+      </button>
+      <button mat-raised-button color="primary" (click)="onFormSubmit()">
+        Add
+      </button>
+    </div>
   </form>
 </mat-dialog-content>

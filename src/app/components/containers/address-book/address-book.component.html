@@ -17,4 +17,5 @@
   <ng-template #noEntries>
     <h2 class="no-entries">Add an address to begin.</h2>
   </ng-template>
+  <app-loading-overlay *ngIf="!!isLoading"></app-loading-overlay>
 </div>

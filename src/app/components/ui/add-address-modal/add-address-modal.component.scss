@@ -1,0 +1,17 @@
+.new-address-form {
+  button: first-of-type;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  height: 100%;
+
+  div:nth-child(2) {
+    margin-top: 2rem;
+    text-align: right;
+  }
+
+  mat-form-field:first-of-type,
+  button:first-of-type {
+    margin-right: 20px;
+  }
+}

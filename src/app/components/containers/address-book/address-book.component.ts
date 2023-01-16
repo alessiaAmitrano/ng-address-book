@@ -13,6 +13,7 @@ import { AddAddressModalComponent } from '../../ui/add-address-modal/add-address
 export class AddressBookComponent implements OnInit {
   private addressItems: AddressItem[] = [];
   filteredItems: AddressItem[] = [];
+  isLoading = true;
 
   constructor(
     public dialog: MatDialog,
@@ -24,6 +25,7 @@ export class AddressBookComponent implements OnInit {
   ngOnInit() {
     if (this.addressItems) {
       this.filteredItems = this.addressItems;
+      this.isLoading = false;
     }
   }
 
@@ -32,9 +34,11 @@ export class AddressBookComponent implements OnInit {
    * @param ref the Firebase document ref
    */
   deleteAddressItem(ref: DocumentReference) {
+    this.isLoading = true;
     this.firestoreService.deleteAddressItem(ref).then(() => {
       this.addressItems = this.firestoreService.getAddressItems();
       this.filteredItems = this.addressItems;
+      this.isLoading = false;
     });
   }
 
@@ -93,12 +97,14 @@ export class AddressBookComponent implements OnInit {
    */
   openAddNewDialog() {
     const dialogRef = this.dialog.open(AddAddressModalComponent, {
-      height: '400px',
+      height: '330px',
       width: '600px',
     });
     dialogRef.afterClosed().subscribe(() => {
+      this.isLoading = true;
       this.addressItems = this.firestoreService.getAddressItems();
       this.filteredItems = this.addressItems;
+      this.isLoading = false;
     });
   }
 }
