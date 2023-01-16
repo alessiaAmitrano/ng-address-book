@@ -1,9 +1,14 @@
 <app-filter-toolbar
   (inputChangeEmitter)="filterAddresses($event)"
+  (addNewEmitter)="openAddNewDialog()"
+  (resetFilterEmitter)="resetFilter()"
+  (sortByFirstEmitter)="sortByFirst()"
+  (sortByLastEmitter)="sortByLast()"
 ></app-filter-toolbar>
 <div class="address-book-flex">
   <app-address-card
     *ngFor="let address of filteredItems"
+    (onAddressDelete)="deleteAddressItem($event)"
     [addressItem]="address"
   >
   </app-address-card>

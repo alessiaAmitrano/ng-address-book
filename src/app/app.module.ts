@@ -14,6 +14,7 @@ import { AddressCardComponent } from './components/ui/address-card/address-card.
 import { HeaderComponent } from './components/ui/header/header.component';
 import { IconButtonComponent } from './components/ui/icon-button/icon-button.component';
 import { MaterialUiModule } from './utils/material-ui/material-ui.module';
+import { AddAddressModalComponent } from './components/ui/add-address-modal/add-address-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MaterialUiModule } from './utils/material-ui/material-ui.module';
     HeaderComponent,
     IconButtonComponent,
     FilterToolbarComponent,
+    AddAddressModalComponent,
   ],
   imports: [
     BrowserModule,
