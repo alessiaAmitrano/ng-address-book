@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DocumentReference } from '@angular/fire/firestore';
+import { AddressItem } from 'src/app/core/models';
 
 @Component({
   selector: 'app-address-card',
@@ -6,7 +8,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./address-card.component.scss']
 })
 export class AddressCardComponent {
-
-@Input() addressItem : any = {full_name: 'Alessia Amitrano', phone_number: '07710984813'};
+@Input() addressItem! : AddressItem;
+@Output() onAddressEdit = new EventEmitter();
+@Output() onAddressDelete = new EventEmitter<DocumentReference>();
 
 }

@@ -14,6 +14,7 @@
       Edit
     </app-icon-button>
     <app-icon-button
+      (click)="onAddressDelete.emit(addressItem.ref)"
       [color]="'accent'"
       [ariaLabel]="'Delete Address'"
       [icon]="'delete'"

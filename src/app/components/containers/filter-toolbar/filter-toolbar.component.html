@@ -1,8 +1,8 @@
 <mat-toolbar>
   <div class="filters-toolbar">
     <section>
-      <mat-form-field class="example-form-field">
-        <mat-label>Clearable input</mat-label>
+      <mat-form-field>
+        <mat-label>Search</mat-label>
         <input
           matInput
           type="text"
@@ -22,6 +22,7 @@
     </section>
     <section>
       <app-icon-button
+        (click)="addNewEmitter.emit()"
         [color]="'primary'"
         [ariaLabel]="'Add Address'"
         [icon]="'add'"
@@ -29,9 +30,8 @@
       >
         Add New
       </app-icon-button>
-    </section>
-    <section>
       <app-icon-button
+        (click)="sortByFirstEmitter.emit()"
         [color]="'basic'"
         [ariaLabel]="'Filter by First Name'"
         [icon]="'sort'"
@@ -40,6 +40,7 @@
         Sort by First Name
       </app-icon-button>
       <app-icon-button
+        (click)="sortByLastEmitter.emit()"
         [color]="'basic'"
         [ariaLabel]="'Filter by Last Name'"
         [icon]="'sort'"
